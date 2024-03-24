@@ -14,12 +14,12 @@ client = Elasticsearch(
 def search(term: str):
     lista_resp: List = []
     search_query = Search(using=client).query(
-        "match", name="Tale"
+        "match", name=term
     )  # .exclude("match", description="beta")
 
     response = search_query.execute()
 
     for hit in response:
-        print(hit.meta.score, hit.name)
+        # print(hit.meta.score, hit.name)
         lista_resp.append({"score": hit.meta.score, "name": hit.name})
     return lista_resp
