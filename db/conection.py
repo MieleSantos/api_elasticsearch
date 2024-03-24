@@ -11,10 +11,19 @@ client = Elasticsearch(
 )
 
 
-def search(term: str):
+def search_match(term_match: str):
+    """
+        fazendo busca usando o "match" no elasticsearch
+    Args:
+        term_match (str): texto para fazer a busca
+
+    Returns:
+        List[Dict]: Lista com score e o resultado da busca
+    """
     lista_resp: List = []
+
     search_query = Search(using=client).query(
-        "match", name=term
+        "match", name=term_match
     )  # .exclude("match", description="beta")
 
     response = search_query.execute()

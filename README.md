@@ -4,6 +4,10 @@ Api usando o FastApi para fazer busca no ElasticSearch
 
 #### Comando elastic
 
+### Instalação do ElasticSearch e kibana com docker
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
 ### Reset senha do kibana_system
 
 ```
